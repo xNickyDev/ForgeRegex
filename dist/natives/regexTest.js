@@ -3,6 +3,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const forgescript_1 = require("@tryforge/forgescript");
 exports.default = new forgescript_1.NativeFunction({
     name: "$regexTest",
+    version: "1.0.0",
     description: "Checks if the regex matches the string",
     brackets: true,
     unwrap: true,
@@ -24,8 +25,8 @@ exports.default = new forgescript_1.NativeFunction({
     ],
     output: forgescript_1.ArgType.Boolean,
     execute(ctx, [name, string]) {
-        const regex = ctx.regex?.get(name);
-        return this.success(regex ? regex.test(string) : undefined);
+        const regex = ctx.regexes?.get(name);
+        return this.success(regex ? Boolean(regex.test(string)) : undefined);
     }
 });
 //# sourceMappingURL=regexTest.js.map

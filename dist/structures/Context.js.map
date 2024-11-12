@@ -1,1 +1,1 @@
-{"version":3,"file":"Context.js","sourceRoot":"","sources":["../../src/structures/Context.ts"],"names":[],"mappings":";;;AAAA,uDAAsD;AAGtD,MAAa,OAAQ,SAAQ,qBAAG;IAC5B,KAAK,CAAe;CACvB;AAFD,0BAEC"}
+{"version":3,"file":"Context.js","sourceRoot":"","sources":["../../src/structures/Context.ts"],"names":[],"mappings":";;;AAAA,uDAAsD;AAGtD,MAAa,OAAQ,SAAQ,qBAAG;IAC5B,OAAO,CAAe;CACzB;AAFD,0BAEC"}

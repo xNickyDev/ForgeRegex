@@ -24,7 +24,7 @@ export default new NativeFunction({
         },
     ],
     execute (ctx: Context, [name, regex]) {
-        ctx.regex?.create(name, regex)
+        ctx.regexes?.create(name, regex)
         return this.success()
     }
 })

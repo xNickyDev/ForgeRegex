@@ -24,7 +24,7 @@ exports.default = new forgescript_1.NativeFunction({
         },
     ],
     execute(ctx, [name, regex]) {
-        ctx.regex?.create(name, regex);
+        ctx.regexes?.create(name, regex);
         return this.success();
     }
 });
