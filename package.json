@@ -1,0 +1,19 @@
+{
+  "name": "forgeregex",
+  "version": "1.0.0",
+  "description": "",
+  "main": "dist/index.js",
+  "scripts": {
+    "docgen": "tsc && typedoc src/index.ts && node dist/docgen",
+    "commit": "npm run docgen && node dist/commit",
+    "test": "tsc && node dist/__tests__/"
+  },
+  "keywords": [],
+  "author": "itsnicky.",
+  "license": "ISC",
+  "devDependencies": {
+    "@tryforge/forgescript": "github:tryforge/ForgeScript#dev",
+    "typedoc": "^0.26.11",
+    "typescript": "^5.6.3"
+  }
+}
