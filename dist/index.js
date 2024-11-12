@@ -7,7 +7,7 @@ class ForgeRegex extends forgescript_1.ForgeExtension {
     description = "A ForgeScript extension that provides support for advanced regex functions.";
     version = require("../package.json").version;
     init() {
-        this.load(__dirname + "./natives");
+        this.load(__dirname + "/natives");
     }
 }
 exports.ForgeRegex = ForgeRegex;
