@@ -2,29 +2,30 @@ import { NativeFunction, ArgType } from "@tryforge/forgescript"
 import { Context } from "../structures/Context"
 
 export default new NativeFunction({
-    name: "$createRegex",
+    name: "$regexTest",
     version: "1.0.0",
-    description: "Creates a new regex",
+    description: "Checks if the regex matches the string",
     brackets: true,
     unwrap: true,
     args: [
         {
             name: "name",
-            description: "The name of the new regex",
+            description: "The name of the regex",
             type: ArgType.String,
             required: true,
             rest: false
         },
         {
-            name: "regex",
-            description: "The regex to create",
+            name: "string",
+            description: "The string to check for",
             type: ArgType.String,
             required: true,
             rest: false
         },
     ],
-    execute (ctx: Context, [name, regex]) {
-        ctx.regex?.create(name, regex)
-        return this.success()
+    output: ArgType.Boolean,
+    execute (ctx: Context, [name, string]) {
+        const regex = ctx.regex?.get(name)
+        return this.success(regex ? regex.test(string) : undefined)
     }
 })

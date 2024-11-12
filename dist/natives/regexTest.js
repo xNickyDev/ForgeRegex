@@ -2,30 +2,30 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 const forgescript_1 = require("@tryforge/forgescript");
 exports.default = new forgescript_1.NativeFunction({
-    name: "$createRegex",
-    version: "1.0.0",
-    description: "Creates a new regex",
+    name: "$regexTest",
+    description: "Checks if the regex matches the string",
     brackets: true,
     unwrap: true,
     args: [
         {
             name: "name",
-            description: "The name of the new regex",
+            description: "The name of the regex",
             type: forgescript_1.ArgType.String,
             required: true,
             rest: false
         },
         {
-            name: "regex",
-            description: "The regex to create",
+            name: "string",
+            description: "The string to check for",
             type: forgescript_1.ArgType.String,
             required: true,
             rest: false
         },
     ],
-    execute(ctx, [name, regex]) {
-        ctx.regex?.create(name, regex);
-        return this.success();
+    output: forgescript_1.ArgType.Boolean,
+    execute(ctx, [name, string]) {
+        const regex = ctx.regex?.get(name);
+        return this.success(regex ? regex.test(string) : undefined);
     }
 });
-//# sourceMappingURL=createRegex.js.map
+//# sourceMappingURL=regexTest.js.map
