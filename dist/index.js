@@ -11,3 +11,4 @@ class ForgeRegex extends forgescript_1.ForgeExtension {
     }
 }
 exports.ForgeRegex = ForgeRegex;
+//# sourceMappingURL=index.js.map

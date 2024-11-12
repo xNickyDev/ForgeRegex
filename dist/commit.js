@@ -41,3 +41,4 @@ async function main() {
 }
 // Nothing
 main();
+//# sourceMappingURL=commit.js.map
