@@ -2,9 +2,10 @@ import { NativeFunction, ArgType } from "@tryforge/forgescript"
 import { Context } from "../structures/Context"
 
 export default new NativeFunction({
-    name: "$regexTest",
+    name: "$regexExecute",
     version: "1.0.0",
-    description: "Returns whether the regex matches the string",
+    description: "Executes a regex search on a string, returns the result",
+    aliases: ["$regexExec"],
     brackets: true,
     unwrap: true,
     args: [
@@ -17,14 +18,14 @@ export default new NativeFunction({
         },
         {
             name: "string",
-            description: "The string to check for",
+            description: "The string to execute",
             type: ArgType.String,
             required: true,
             rest: false
         },
     ],
-    output: ArgType.Boolean,
+    output: ArgType.Json,
     execute (ctx: Context, [name, string]) {
-        return this.success(ctx.regexes?.get(name)?.test(string))
+        return this.success(ctx.regexes?.get(name)?.exec(string))
     }
 })

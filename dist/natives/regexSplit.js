@@ -2,9 +2,8 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 const forgescript_1 = require("@tryforge/forgescript");
 exports.default = new forgescript_1.NativeFunction({
-    name: "$regexTest",
-    version: "1.0.0",
-    description: "Returns whether the regex matches the string",
+    name: "$regexSplit",
+    description: "Splits a string with regex",
     brackets: true,
     unwrap: true,
     args: [
@@ -17,15 +16,16 @@ exports.default = new forgescript_1.NativeFunction({
         },
         {
             name: "string",
-            description: "The string to check for",
+            description: "The string to split",
             type: forgescript_1.ArgType.String,
             required: true,
             rest: false
         },
     ],
-    output: forgescript_1.ArgType.Boolean,
+    output: forgescript_1.ArgType.Json,
     execute(ctx, [name, string]) {
-        return this.success(ctx.regexes?.get(name)?.test(string));
+        const regex = ctx.regexes?.get(name);
+        return this.success(regex ? string.split(regex) : undefined);
     }
 });
-//# sourceMappingURL=regexTest.js.map
+//# sourceMappingURL=regexSplit.js.map

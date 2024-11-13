@@ -2,9 +2,9 @@ import { NativeFunction, ArgType } from "@tryforge/forgescript"
 import { Context } from "../structures/Context"
 
 export default new NativeFunction({
-    name: "$regexTest",
+    name: "$regexSplit",
     version: "1.0.0",
-    description: "Returns whether the regex matches the string",
+    description: "Splits a string with regex",
     brackets: true,
     unwrap: true,
     args: [
@@ -17,14 +17,15 @@ export default new NativeFunction({
         },
         {
             name: "string",
-            description: "The string to check for",
+            description: "The string to split",
             type: ArgType.String,
             required: true,
             rest: false
         },
     ],
-    output: ArgType.Boolean,
+    output: ArgType.Json,
     execute (ctx: Context, [name, string]) {
-        return this.success(ctx.regexes?.get(name)?.test(string))
+        const regex = ctx.regexes?.get(name)
+        return this.success(regex ? string.split(regex) : undefined)
     }
 })

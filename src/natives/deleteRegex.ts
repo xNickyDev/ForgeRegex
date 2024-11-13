@@ -18,6 +18,6 @@ export default new NativeFunction({
     ],
     output: ArgType.Boolean,
     execute (ctx: Context, [name]) {
-        return this.success(ctx.regexes?.delete(name))
+        return this.success(ctx.regexes ? ctx.regexes.delete(name) : false)
     }
 })
