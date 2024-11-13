@@ -5,4 +5,6 @@ export declare class ForgeRegex extends ForgeExtension {
     version: any;
     init(): void;
 }
+export * from "./managers";
+export * from "./structures";
 //# sourceMappingURL=index.d.ts.map

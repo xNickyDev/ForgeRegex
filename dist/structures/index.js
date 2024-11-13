@@ -14,17 +14,5 @@ var __exportStar = (this && this.__exportStar) || function(m, exports) {
     for (var p in m) if (p !== "default" && !Object.prototype.hasOwnProperty.call(exports, p)) __createBinding(exports, m, p);
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.ForgeRegex = void 0;
-const forgescript_1 = require("@tryforge/forgescript");
-class ForgeRegex extends forgescript_1.ForgeExtension {
-    name = "ForgeRegex";
-    description = "A ForgeScript extension that provides support for advanced regex functions.";
-    version = require("../package.json").version;
-    init() {
-        this.load(__dirname + "/natives");
-    }
-}
-exports.ForgeRegex = ForgeRegex;
-__exportStar(require("./managers"), exports);
-__exportStar(require("./structures"), exports);
+__exportStar(require("./Context"), exports);
 //# sourceMappingURL=index.js.map

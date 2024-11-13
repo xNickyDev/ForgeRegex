@@ -9,3 +9,6 @@ export class ForgeRegex extends ForgeExtension {
         this.load(__dirname + "/natives")
     }
 }
+
+export * from "./managers"
+export * from "./structures"
