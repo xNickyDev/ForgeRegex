@@ -1,5 +1,6 @@
 import { NativeFunction, ArgType } from "@tryforge/forgescript"
 import { Context } from "../structures/Context"
+import { RegexManager } from "../managers"
 
 export default new NativeFunction({
     name: "$createRegex",
@@ -24,7 +25,8 @@ export default new NativeFunction({
         },
     ],
     execute (ctx: Context, [name, regex]) {
-        ctx.regexes?.create(name, regex)
+        ctx.regexes ??= new RegexManager()
+        ctx.regexes.create(name, regex)
         return this.success()
     }
 })

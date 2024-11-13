@@ -25,10 +25,7 @@ export default new NativeFunction({
     ],
     output: ArgType.Boolean,
     execute (ctx: Context, [name, string]) {
-        console.log("Regexes", ctx.regexes)
         const regex = ctx.regexes?.get(name)
-        console.log(`Regex: ${regex}`)
-        console.log(`Test: ${regex?.test(string)}`)
         return this.success(regex?.test(string))
     }
 })

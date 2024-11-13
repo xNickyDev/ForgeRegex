@@ -1,6 +1,7 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 const forgescript_1 = require("@tryforge/forgescript");
+const managers_1 = require("../managers");
 exports.default = new forgescript_1.NativeFunction({
     name: "$createRegex",
     version: "1.0.0",
@@ -24,7 +25,8 @@ exports.default = new forgescript_1.NativeFunction({
         },
     ],
     execute(ctx, [name, regex]) {
-        ctx.regexes?.create(name, regex);
+        ctx.regexes ??= new managers_1.RegexManager();
+        ctx.regexes.create(name, regex);
         return this.success();
     }
 });

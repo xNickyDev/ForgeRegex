@@ -25,10 +25,7 @@ exports.default = new forgescript_1.NativeFunction({
     ],
     output: forgescript_1.ArgType.Boolean,
     execute(ctx, [name, string]) {
-        console.log("Regexes", ctx.regexes);
         const regex = ctx.regexes?.get(name);
-        console.log(`Regex: ${regex}`);
-        console.log(`Test: ${regex?.test(string)}`);
         return this.success(regex?.test(string));
     }
 });

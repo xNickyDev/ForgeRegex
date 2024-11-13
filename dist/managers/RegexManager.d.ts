@@ -1,13 +1,7 @@
-declare class Manager {
+export declare class RegexManager {
     regexes: Map<string, RegExp>;
-    constructor();
+    create(name: string, regex: string): void;
     get(name: string): RegExp | undefined;
-    delete(name: string): void;
+    delete(name: string): boolean;
 }
-export declare class RegexManager extends Manager {
-    current: RegExp | null;
-    constructor();
-    create(name: string, regexString: string): void;
-}
-export {};
 //# sourceMappingURL=RegexManager.d.ts.map
