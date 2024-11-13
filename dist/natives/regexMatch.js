@@ -23,11 +23,22 @@ exports.default = new forgescript_1.NativeFunction({
             required: true,
             rest: false
         },
+        {
+            name: "separator",
+            description: "The separator to use for each result",
+            type: forgescript_1.ArgType.String,
+            rest: false
+        },
     ],
     output: forgescript_1.ArgType.Json,
-    execute(ctx, [name, string]) {
+    execute(ctx, [name, string, sep]) {
         const regex = ctx.regexes?.get(name);
-        return this.success(regex ? string.match(regex) : undefined);
+        if (!regex)
+            return this.success();
+        const match = string.match(regex);
+        if (sep)
+            return this.success(match?.join(sep ?? ", "));
+        return this.successJSON(match);
     }
 });
 //# sourceMappingURL=regexMatch.js.map

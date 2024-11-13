@@ -1,1 +1,1 @@
-{"1.0.0":["Added functions to set flags and last index","Added bunch of regex functions","Added $deleteRegex","Added $regexTest","Added $createRegex"]}
+{"1.0.0":["Added separator to $regexSplit and $regexMatch","Added functions to set flags and last index","Added bunch of regex functions","Added $deleteRegex","Added $regexTest","Added $createRegex"]}

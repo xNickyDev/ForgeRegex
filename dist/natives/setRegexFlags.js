@@ -4,6 +4,7 @@ const forgescript_1 = require("@tryforge/forgescript");
 const Context_1 = require("../structures/Context");
 exports.default = new forgescript_1.NativeFunction({
     name: "$setRegexFlags",
+    version: "1.0.0",
     description: "Sets the flags for a regex",
     aliases: ["$setRegexFlag"],
     brackets: true,

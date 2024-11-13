@@ -22,10 +22,20 @@ export default new NativeFunction({
             required: true,
             rest: false
         },
+        {
+            name: "separator",
+            description: "The separator to use for each result",
+            type: ArgType.String,
+            rest: false
+        },
     ],
     output: ArgType.Json,
-    execute (ctx: Context, [name, string]) {
+    execute (ctx: Context, [name, string, sep]) {
         const regex = ctx.regexes?.get(name)
-        return this.success(regex ? string.split(regex) : undefined)
+        if (!regex) return this.success()
+
+        const split = string.split(regex)
+        if (sep) return this.success(split?.join(sep ?? ", "))
+        return this.successJSON(split)
     }
 })
