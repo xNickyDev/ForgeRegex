@@ -11,7 +11,7 @@ A ForgeScript extension that provides support for advanced regex functions.
 
 ---
 
-### Contents
+## Contents
 
 1. [Why ForgeRegex?](#why-forgeregex)
 2. [Installation](#installation)
