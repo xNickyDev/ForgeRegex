@@ -1,7 +1,5 @@
-import { Collection } from "discord.js";
 export declare class RegexManager {
-    regexes: Collection<string, RegExp>;
-    constructor();
+    private readonly regexes;
     create(name: string, regex: string): void;
     get(name: string): RegExp | undefined;
     delete(name: string): void;
