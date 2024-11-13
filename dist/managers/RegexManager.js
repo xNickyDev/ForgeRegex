@@ -3,7 +3,10 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.RegexManager = void 0;
 const discord_js_1 = require("discord.js");
 class RegexManager {
-    regexes = new discord_js_1.Collection();
+    regexes;
+    constructor() {
+        this.regexes = new discord_js_1.Collection();
+    }
     create(name, regex) {
         this.regexes.set(name, new RegExp(regex));
     }

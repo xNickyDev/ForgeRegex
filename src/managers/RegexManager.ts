@@ -1,7 +1,11 @@
 import { Collection } from "discord.js"
 
 export class RegexManager {
-    private readonly regexes = new Collection<string, RegExp>()
+    public regexes: Collection<string, RegExp>
+
+    constructor() {
+        this.regexes = new Collection<string, RegExp>()
+    }
 
     public create(name: string, regex: string) {
         this.regexes.set(name, new RegExp(regex))
