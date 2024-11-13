@@ -8,6 +8,7 @@ class Context extends forgescript_1.Context {
     constructor(runtime) {
         super(runtime);
         this.regexes = new RegexManager_1.RegexManager();
+        console.log("RegexManager", this.regexes);
     }
 }
 exports.Context = Context;

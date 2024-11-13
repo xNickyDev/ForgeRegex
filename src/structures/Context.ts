@@ -7,5 +7,6 @@ export class Context extends ctx {
     constructor(runtime: IRunnable) {
         super(runtime)
         this.regexes = new RegexManager()
+        console.log("RegexManager", this.regexes)
     }
 }
