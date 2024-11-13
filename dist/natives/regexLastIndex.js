@@ -3,6 +3,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const forgescript_1 = require("@tryforge/forgescript");
 exports.default = new forgescript_1.NativeFunction({
     name: "$regexLastIndex",
+    version: "1.0.0",
     description: "Returns the last index of a regex",
     brackets: true,
     unwrap: true,

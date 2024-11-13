@@ -2,9 +2,8 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 const forgescript_1 = require("@tryforge/forgescript");
 exports.default = new forgescript_1.NativeFunction({
-    name: "$regexSplit",
-    version: "1.0.0",
-    description: "Splits a string with regex",
+    name: "$setRegexLastIndex",
+    description: "Sets the last index for a regex",
     brackets: true,
     unwrap: true,
     args: [
@@ -16,17 +15,18 @@ exports.default = new forgescript_1.NativeFunction({
             rest: false
         },
         {
-            name: "string",
-            description: "The string to split",
-            type: forgescript_1.ArgType.String,
+            name: "index",
+            description: "The index to set",
+            type: forgescript_1.ArgType.Number,
             required: true,
             rest: false
         },
     ],
-    output: forgescript_1.ArgType.Json,
-    execute(ctx, [name, string]) {
+    execute(ctx, [name, index]) {
         const regex = ctx.regexes?.get(name);
-        return this.success(regex ? string.split(regex) : undefined);
+        if (regex)
+            regex.lastIndex = index;
+        return this.success();
     }
 });
-//# sourceMappingURL=regexSplit.js.map
+//# sourceMappingURL=setRegexLastIndex.js.map

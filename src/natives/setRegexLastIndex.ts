@@ -1,32 +1,31 @@
 import { NativeFunction, ArgType } from "@tryforge/forgescript"
 import { Context } from "../structures/Context"
-import { RegexManager } from "../managers"
 
 export default new NativeFunction({
-    name: "$createRegex",
+    name: "$setRegexLastIndex",
     version: "1.0.0",
-    description: "Creates a new regex",
+    description: "Sets the last index for a regex",
     brackets: true,
     unwrap: true,
     args: [
         {
             name: "name",
-            description: "The name of the new regex",
+            description: "The name of the regex",
             type: ArgType.String,
             required: true,
             rest: false
         },
         {
-            name: "regex",
-            description: "The regex to create",
-            type: ArgType.String,
+            name: "index",
+            description: "The index to set",
+            type: ArgType.Number,
             required: true,
             rest: false
         },
     ],
-    execute (ctx: Context, [name, regex]) {
-        ctx.regexes ??= new RegexManager()
-        ctx.regexes.set(name, regex)
+    execute (ctx: Context, [name, index]) {
+        const regex = ctx.regexes?.get(name)
+        if (regex) regex.lastIndex = index
         return this.success()
     }
 })

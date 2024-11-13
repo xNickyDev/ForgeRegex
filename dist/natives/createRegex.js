@@ -26,7 +26,7 @@ exports.default = new forgescript_1.NativeFunction({
     ],
     execute(ctx, [name, regex]) {
         ctx.regexes ??= new managers_1.RegexManager();
-        ctx.regexes.create(name, regex);
+        ctx.regexes.set(name, regex);
         return this.success();
     }
 });

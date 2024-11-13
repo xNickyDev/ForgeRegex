@@ -1,10 +1,11 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 const forgescript_1 = require("@tryforge/forgescript");
+const Context_1 = require("../structures/Context");
 exports.default = new forgescript_1.NativeFunction({
-    name: "$regexSplit",
-    version: "1.0.0",
-    description: "Splits a string with regex",
+    name: "$setRegexFlags",
+    description: "Sets the flags for a regex",
+    aliases: ["$setRegexFlag"],
     brackets: true,
     unwrap: true,
     args: [
@@ -16,17 +17,19 @@ exports.default = new forgescript_1.NativeFunction({
             rest: false
         },
         {
-            name: "string",
-            description: "The string to split",
-            type: forgescript_1.ArgType.String,
+            name: "flags",
+            description: "The flags to set",
+            type: forgescript_1.ArgType.Enum,
+            enum: Context_1.RegexFlags,
             required: true,
-            rest: false
+            rest: true
         },
     ],
-    output: forgescript_1.ArgType.Json,
-    execute(ctx, [name, string]) {
+    execute(ctx, [name, flags]) {
         const regex = ctx.regexes?.get(name);
-        return this.success(regex ? string.split(regex) : undefined);
+        if (regex)
+            ctx.regexes.set(name, regex, flags);
+        return this.success();
     }
 });
-//# sourceMappingURL=regexSplit.js.map
+//# sourceMappingURL=setRegexFlags.js.map
