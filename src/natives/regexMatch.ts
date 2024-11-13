@@ -30,13 +30,15 @@ export default new NativeFunction({
             rest: false
         },
     ],
-    output: ArgType.Json,
+    output: ArgType.Unknown,
     execute (ctx: Context, [name, string, sep]) {
         const regex = ctx.regexes?.get(name)
         if (!regex) return this.success()
 
         const match = string.match(regex)
-        if (sep !== null) return this.success(match?.join(sep))
+        if (!match) return this.success()
+
+        if (sep !== null) return this.success(match.join(sep))
         return this.successJSON(match)
     }
 })

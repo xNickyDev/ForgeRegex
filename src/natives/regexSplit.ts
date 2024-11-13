@@ -29,13 +29,13 @@ export default new NativeFunction({
             rest: false
         },
     ],
-    output: ArgType.Json,
+    output: ArgType.Unknown,
     execute (ctx: Context, [name, string, sep]) {
         const regex = ctx.regexes?.get(name)
         if (!regex) return this.success()
 
         const split = string.split(regex)
-        if (sep !== null) return this.success(split?.join(sep))
+        if (sep !== null) return this.success(split.join(sep))
         return this.successJSON(split)
     }
 })

@@ -23,9 +23,19 @@ export default new NativeFunction({
             required: true,
             rest: false
         },
+        {
+            name: "separator",
+            description: "The separator to use for each result",
+            type: ArgType.String,
+            rest: false
+        },
     ],
-    output: ArgType.Json,
-    execute (ctx: Context, [name, string]) {
-        return this.success(ctx.regexes?.get(name)?.exec(string))
+    output: ArgType.Unknown,
+    execute (ctx: Context, [name, string, sep]) {
+        const exec = ctx.regexes?.get(name)?.exec(string)
+        if (!exec) return this.success()
+
+        if (sep !== null) return this.success(exec.join(sep))
+        return this.successJSON(exec)
     }
 })

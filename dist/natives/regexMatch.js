@@ -30,14 +30,16 @@ exports.default = new forgescript_1.NativeFunction({
             rest: false
         },
     ],
-    output: forgescript_1.ArgType.Json,
+    output: forgescript_1.ArgType.Unknown,
     execute(ctx, [name, string, sep]) {
         const regex = ctx.regexes?.get(name);
         if (!regex)
             return this.success();
         const match = string.match(regex);
+        if (!match)
+            return this.success();
         if (sep !== null)
-            return this.success(match?.join(sep));
+            return this.success(match.join(sep));
         return this.successJSON(match);
     }
 });
