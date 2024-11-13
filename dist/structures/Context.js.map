@@ -1,1 +1,1 @@
-{"version":3,"file":"Context.js","sourceRoot":"","sources":["../../src/structures/Context.ts"],"names":[],"mappings":";;;AAAA,uDAAsD;AAGtD,MAAa,OAAQ,SAAQ,qBAAG;IAC5B,OAAO,CAAe;CACzB;AAFD,0BAEC"}
+{"version":3,"file":"Context.js","sourceRoot":"","sources":["../../src/structures/Context.ts"],"names":[],"mappings":";;;AAAA,uDAAiE;AACjE,2DAAuD;AAEvD,MAAa,OAAQ,SAAQ,qBAAG;IAC5B,OAAO,CAAe;IAEtB,YAAY,OAAkB;QAC1B,KAAK,CAAC,OAAO,CAAC,CAAA;QACd,IAAI,CAAC,OAAO,GAAG,IAAI,2BAAY,EAAE,CAAA;IACrC,CAAC;CACJ;AAPD,0BAOC"}
