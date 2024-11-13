@@ -26,6 +26,8 @@ export default new NativeFunction({
     output: ArgType.Boolean,
     execute (ctx: Context, [name, string]) {
         const regex = ctx.regexes?.get(name)
-        return this.success(regex ? Boolean(regex.test(string)) : undefined)
+        console.log(`Regex: ${regex}`)
+        console.log(`Test: ${regex?.test(string)}`)
+        return this.success(regex?.test(string))
     }
 })
