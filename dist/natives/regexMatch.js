@@ -36,8 +36,8 @@ exports.default = new forgescript_1.NativeFunction({
         if (!regex)
             return this.success();
         const match = string.match(regex);
-        if (sep)
-            return this.success(match?.join(sep ?? ", "));
+        if (sep !== null)
+            return this.success(match?.join(sep));
         return this.successJSON(match);
     }
 });

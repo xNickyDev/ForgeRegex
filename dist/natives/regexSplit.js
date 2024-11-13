@@ -35,8 +35,8 @@ exports.default = new forgescript_1.NativeFunction({
         if (!regex)
             return this.success();
         const split = string.split(regex);
-        if (sep)
-            return this.success(split?.join(sep ?? ", "));
+        if (sep !== null)
+            return this.success(split?.join(sep));
         return this.successJSON(split);
     }
 });

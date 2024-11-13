@@ -1,7 +1,7 @@
 {
   "name": "forge.regex",
   "version": "1.0.0",
-  "description": "",
+  "description": "A ForgeScript extension that provides support for advanced regex functions.",
   "main": "dist/index.js",
   "scripts": {
     "docgen": "tsc && typedoc src/index.ts && node dist/docgen",
