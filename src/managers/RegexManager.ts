@@ -1,26 +1,29 @@
-import { Collection } from "discord.js";
+class Manager {
+    public regexes: Map<string, RegExp>
 
-export class RegexManager {
-    private readonly regexes = new Collection<string, RegExp>()
-
-    public create(name: string, regex: string) {
-        console.log(`Created ${name}: ${regex}`)
-        this.regexes.set(name, new RegExp(regex))
-        console.log(`RegExp: ${new RegExp(regex)}`)
+    constructor() {
+        this.regexes = new Map()
     }
 
     public get(name: string) {
-        console.log(`Got: ${name}`)
         return this.regexes.get(name)
     }
 
     public delete(name: string) {
-        console.log(`Deleted: ${name}`)
         this.regexes.delete(name)
     }
+}
 
-    public clear() {
-        console.log("Cleared all regexes")
-        this.regexes.clear()
+export class RegexManager extends Manager {
+    public current: RegExp | null = null
+
+    constructor() {
+        super()
+    }
+
+    public create(name: string, regexString: string) {
+        const regex = new RegExp(regexString)
+        this.regexes.set(name, regex)
+        this.current = regex
     }
 }
