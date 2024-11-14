@@ -3,7 +3,7 @@
 # ForgeRegex
 A ForgeScript extension that provides support for advanced regex functions.
 
-<a href="https://github.com/xNickyDev/ForgeRegex/"><img src="https://img.shields.io/github/package-json/v/xNickyDev/ForgeRegex/dev?label=@tryforge/forge.regex&color=5c16d4" alt="@tryforge/forge.regex"></a>
+<a href="https://github.com/xNickyDev/ForgeRegex/"><img src="https://img.shields.io/github/package-json/v/xNickyDev/ForgeRegex/dev?label=forge.regex&color=5c16d4" alt="forge.regex"></a>
 <a href="https://github.com/tryforge/ForgeScript/"><img src="https://img.shields.io/github/package-json/v/tryforge/ForgeScript/main?label=@tryforge/forgescript&color=5c16d4" alt="@tryforge/forgescript"></a>
 <a href="https://discord.gg/hcJgjzPvqb"><img src="https://img.shields.io/discord/739934735387721768?logo=discord" alt="Discord"></a>
 
@@ -11,7 +11,7 @@ A ForgeScript extension that provides support for advanced regex functions.
 
 ---
 
-### Contents
+## Contents
 
 1. [Why ForgeRegex?](#why-forgeregex)
 2. [Installation](#installation)
@@ -25,18 +25,18 @@ A ForgeScript extension that provides support for advanced regex functions.
 
 1. Run the following command to install the required `npm` package:
    ```bash
-   npm i @tryforge/forge.regex
+   npm i https://github.com/xNickyDev/ForgeRegex.git
    ```
 
 2. Next, add this import at the top of your client initialization file:
    ```js
-   const { ForgeRegex } = require("@tryforge/forge.regex")
+   const { ForgeRegex } = require("forge.regex")
    ```
 
 3. Here’s an example of how your main file should look:
    ```js
    const { ForgeClient } = require("@tryforge/forgescript")
-   const { ForgeRegex } = require("@tryforge/forge.regex")
+   const { ForgeRegex } = require("forge.regex")
 
    const client = new ForgeClient({
        ...options, // Your current configuration options   
