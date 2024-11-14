@@ -15,7 +15,7 @@ A ForgeScript extension that provides support for advanced regex functions.
 
 1. [Why ForgeRegex?](#why-forgeregex)
 2. [Installation](#installation)
-3. [Documentation](https://docs.botforge.org/p/ForgeCanvas/)
+3. [Documentation](https://docs.botforge.org/p/ForgeRegex/)
 <br>
 
 <h3 align="center">Why ForgeRegex?</h3><hr>
