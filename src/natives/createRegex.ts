@@ -17,16 +17,22 @@ export default new NativeFunction({
             rest: false
         },
         {
-            name: "regex",
-            description: "The regex to create",
+            name: "pattern",
+            description: "The pattern of the regex",
             type: ArgType.String,
             required: true,
             rest: false
         },
+        {
+            name: "flags",
+            description: "The flags of the regex",
+            type: ArgType.String,
+            rest: false
+        },
     ],
-    execute (ctx: Context, [name, regex]) {
+    execute (ctx: Context, [name, pattern, flags]) {
         ctx.regexes ??= new RegexManager()
-        ctx.regexes.set(name, regex)
+        ctx.regexes.set(name, pattern, flags || undefined)
         return this.success()
     }
 })

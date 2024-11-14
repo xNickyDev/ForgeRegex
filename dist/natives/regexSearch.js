@@ -2,10 +2,8 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 const forgescript_1 = require("@tryforge/forgescript");
 exports.default = new forgescript_1.NativeFunction({
-    name: "$setRegexFlags",
-    version: "1.0.0",
-    description: "Sets the flags for a regex",
-    aliases: ["$setRegexFlag"],
+    name: "$regexSearch",
+    description: "Returns the index of the first match in a string",
     brackets: true,
     unwrap: true,
     args: [
@@ -17,18 +15,17 @@ exports.default = new forgescript_1.NativeFunction({
             rest: false
         },
         {
-            name: "flags",
-            description: "The flags to set",
+            name: "string",
+            description: "The string to search for",
             type: forgescript_1.ArgType.String,
             required: true,
             rest: false
         },
     ],
-    execute(ctx, [name, flags]) {
+    output: forgescript_1.ArgType.Number,
+    execute(ctx, [name, string]) {
         const regex = ctx.regexes?.get(name);
-        if (regex)
-            ctx.regexes.set(name, regex, flags);
-        return this.success();
+        return this.success(regex ? string.search(regex) : undefined);
     }
 });
-//# sourceMappingURL=setRegexFlags.js.map
+//# sourceMappingURL=regexSearch.js.map

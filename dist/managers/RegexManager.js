@@ -3,8 +3,8 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.RegexManager = void 0;
 class RegexManager {
     regexes = new Map();
-    set(name, regex, flags) {
-        this.regexes.set(name, new RegExp(regex, flags?.join("")));
+    set(name, pattern, flags) {
+        this.regexes.set(name, new RegExp(pattern, flags));
     }
     get(name) {
         return this.regexes.get(name);

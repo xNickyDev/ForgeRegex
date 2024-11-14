@@ -2,10 +2,9 @@ import { NativeFunction, ArgType } from "@tryforge/forgescript"
 import { Context } from "../structures/Context"
 
 export default new NativeFunction({
-    name: "$setRegexFlags",
+    name: "$regexSearch",
     version: "1.0.0",
-    description: "Sets the flags for a regex",
-    aliases: ["$setRegexFlag"],
+    description: "Returns the index of the first match in a string",
     brackets: true,
     unwrap: true,
     args: [
@@ -17,16 +16,16 @@ export default new NativeFunction({
             rest: false
         },
         {
-            name: "flags",
-            description: "The flags to set",
+            name: "string",
+            description: "The string to search for",
             type: ArgType.String,
             required: true,
             rest: false
         },
     ],
-    execute (ctx: Context, [name, flags]) {
+    output: ArgType.Number,
+    execute (ctx: Context, [name, string]) {
         const regex = ctx.regexes?.get(name)
-        if (regex) ctx.regexes!.set(name, regex, flags)
-        return this.success()
+        return this.success(regex ? string.search(regex) : undefined)
     }
 })

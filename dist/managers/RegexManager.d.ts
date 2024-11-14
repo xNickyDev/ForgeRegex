@@ -1,7 +1,6 @@
-import { RegexFlags } from "../structures";
 export declare class RegexManager {
     regexes: Map<string, RegExp>;
-    set(name: string, regex: string | RegExp, flags?: RegexFlags[]): void;
+    set(name: string, pattern: string | RegExp, flags?: string): void;
     get(name: string): RegExp | undefined;
     delete(name: string): boolean;
 }

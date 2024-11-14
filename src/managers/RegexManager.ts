@@ -1,10 +1,8 @@
-import { RegexFlags } from "../structures"
-
 export class RegexManager {
     public regexes = new Map<string, RegExp>()
 
-    public set(name: string, regex: string | RegExp, flags?: RegexFlags[]) {
-        this.regexes.set(name, new RegExp(regex, flags?.join("")))
+    public set(name: string, pattern: string | RegExp, flags?: string) {
+        this.regexes.set(name, new RegExp(pattern, flags))
     }
 
     public get(name: string) {

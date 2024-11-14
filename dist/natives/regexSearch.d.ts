@@ -13,4 +13,4 @@ declare const _default: NativeFunction<[{
     rest: false;
 }], true>;
 export default _default;
-//# sourceMappingURL=setRegexFlags.d.ts.map
+//# sourceMappingURL=regexSearch.d.ts.map

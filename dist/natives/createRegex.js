@@ -17,16 +17,22 @@ exports.default = new forgescript_1.NativeFunction({
             rest: false
         },
         {
-            name: "regex",
-            description: "The regex to create",
+            name: "pattern",
+            description: "The pattern of the regex",
             type: forgescript_1.ArgType.String,
             required: true,
             rest: false
         },
+        {
+            name: "flags",
+            description: "The flags of the regex",
+            type: forgescript_1.ArgType.String,
+            rest: false
+        },
     ],
-    execute(ctx, [name, regex]) {
+    execute(ctx, [name, pattern, flags]) {
         ctx.regexes ??= new managers_1.RegexManager();
-        ctx.regexes.set(name, regex);
+        ctx.regexes.set(name, pattern, flags || undefined);
         return this.success();
     }
 });
