@@ -1,0 +1,1 @@
+{"version":3,"file":"RegexManager.d.ts","sourceRoot":"","sources":["../../src/managers/RegexManager.ts"],"names":[],"mappings":"AAAA,qBAAa,YAAY;IACd,OAAO,sBAA4B;IAEnC,GAAG,CAAC,IAAI,EAAE,MAAM,EAAE,OAAO,EAAE,MAAM,GAAG,MAAM,EAAE,KAAK,CAAC,EAAE,MAAM;IAI1D,GAAG,CAAC,IAAI,EAAE,MAAM;IAIhB,MAAM,CAAC,IAAI,EAAE,MAAM;CAG7B"}
