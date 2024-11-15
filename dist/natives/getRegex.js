@@ -2,23 +2,22 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 const forgescript_1 = require("@tryforge/forgescript");
 exports.default = new forgescript_1.NativeFunction({
-    name: "$deleteRegex",
-    version: "1.0.0",
-    description: "Deletes an existing regex, returns bool",
+    name: "$getRegex",
+    description: "Gets an existing regex",
     brackets: true,
     unwrap: true,
     args: [
         {
             name: "name",
-            description: "The name of the regex to delete",
+            description: "The name of the regex to get",
             type: forgescript_1.ArgType.String,
             required: true,
             rest: false
         },
     ],
-    output: forgescript_1.ArgType.Boolean,
+    output: forgescript_1.ArgType.String,
     execute(ctx, [name]) {
-        return this.success(!!ctx.regexes?.delete(name));
+        return this.success(ctx.regexes?.get(name));
     }
 });
-//# sourceMappingURL=deleteRegex.js.map
+//# sourceMappingURL=getRegex.js.map
