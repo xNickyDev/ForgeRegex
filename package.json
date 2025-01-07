@@ -1,6 +1,6 @@
 {
   "name": "forge.regex",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "A ForgeScript extension that provides support for advanced regex functions.",
   "main": "dist/index.js",
   "scripts": {
@@ -16,9 +16,9 @@
   "author": "itsnicky.",
   "license": "ISC",
   "devDependencies": {
-    "@tryforge/forgescript": "github:tryforge/ForgeScript#dev",
+    "@tryforge/forgescript": "^2.1.0",
     "@types/node": "^22.9.0",
-    "discord.js": "^14.16.3",
+    "discord.js": "^14.17.2",
     "typedoc": "^0.26.11",
     "typescript": "^5.6.3"
   }
