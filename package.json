@@ -16,7 +16,7 @@
   "author": "itsnicky.",
   "license": "ISC",
   "devDependencies": {
-    "@tryforge/forgescript": "^2.1.0",
+    "@tryforge/forgescript": "^2.2.0",
     "@types/node": "^22.9.0",
     "discord.js": "^14.17.2",
     "typedoc": "^0.26.11",
