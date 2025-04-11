@@ -5,7 +5,7 @@ A ForgeScript extension that provides support for advanced regex functions.
 
 <a href="https://github.com/xNickyDev/ForgeRegex/"><img src="https://img.shields.io/github/package-json/v/xNickyDev/ForgeRegex/main?label=forge.regex&color=5c16d4" alt="forge.regex"></a>
 <a href="https://github.com/tryforge/ForgeScript/"><img src="https://img.shields.io/github/package-json/v/tryforge/ForgeScript/main?label=@tryforge/forgescript&color=5c16d4" alt="@tryforge/forgescript"></a>
-<a href="https://discord.gg/hcJgjzPvqb"><img src="https://img.shields.io/discord/739934735387721768?logo=discord" alt="Discord"></a>
+<a href="https://discord.gg/hcJgjzPvqb"><img src="https://img.shields.io/discord/997899472610795580?logo=discord" alt="Discord"></a>
 
 </div>
 
