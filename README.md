@@ -1,5 +1,7 @@
 <div align="center">
 
+<img height="130" width="130" src="assets/RegExp.png" alt="ForgeRegex">
+
 # ForgeRegex
 A ForgeScript extension that provides support for advanced regex functions.
 
