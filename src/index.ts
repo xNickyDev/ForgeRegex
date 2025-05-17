@@ -6,7 +6,7 @@ export class ForgeRegex extends ForgeExtension {
     version = require("../package.json").version
 
     public init () {
-        this.load(__dirname + "/natives")
+        this.load(__dirname + "/native")
     }
 }
 
