@@ -1,6 +1,6 @@
 {
   "name": "forge.regex",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A ForgeScript extension that provides support for advanced regex functions.",
   "main": "dist/index.js",
   "scripts": {
