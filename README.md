@@ -1,6 +1,6 @@
 <div align="center">
 
-<img height="150" width="150" src="https://github.com/xNickyDev/ForgeRegex/blob/dev/assets/RegExp.png?raw=true" alt="ForgeRegex">
+<img height="150" width="150" src="https://github.com/xNickyDev/ForgeRegex/blob/dev/assets/RegExp.png" alt="ForgeRegex">
 
 # ForgeRegex
 A ForgeScript extension that provides support for advanced regex functions.
