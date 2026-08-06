@@ -1,5 +1,5 @@
 import { NativeFunction, ArgType } from "@tryforge/forgescript"
-import { Context } from "../structures/Context"
+import type { Context } from "../structures/Context"
 import { RegexManager } from "../managers"
 
 export default new NativeFunction({
@@ -30,7 +30,7 @@ export default new NativeFunction({
             rest: false
         },
     ],
-    execute (ctx: Context, [name, pattern, flags]) {
+    execute(ctx: Context, [name, pattern, flags]) {
         ctx.regexes ??= new RegexManager()
         ctx.regexes.set(name, pattern, flags || undefined)
         return this.success()

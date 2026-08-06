@@ -1,5 +1,6 @@
 import { NativeFunction, ArgType } from "@tryforge/forgescript"
-import { Context } from "../structures/Context"
+import type { Context } from "../structures/Context"
+import { RegexFlags } from "./regexHasFlags"
 
 export default new NativeFunction({
     name: "$regexFlags",
@@ -17,8 +18,8 @@ export default new NativeFunction({
             rest: false
         },
     ],
-    output: ArgType.String,
-    execute (ctx: Context, [name]) {
+    output: RegexFlags,
+    execute(ctx: Context, [name]) {
         return this.success(ctx.regexes?.get(name)?.flags)
     }
 })

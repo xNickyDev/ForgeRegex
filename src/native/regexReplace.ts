@@ -1,5 +1,5 @@
 import { NativeFunction, ArgType } from "@tryforge/forgescript"
-import { Context } from "../structures/Context"
+import type { Context } from "../structures/Context"
 
 export default new NativeFunction({
     name: "$regexReplace",
@@ -37,7 +37,7 @@ export default new NativeFunction({
         },
     ],
     output: ArgType.String,
-    execute (ctx: Context, [name, text, replacement, amount]) {
+    execute(ctx: Context, [name, text, replacement, amount]) {
         amount ??= -1
         const regex = ctx.regexes?.get(name)
         if (!regex) return this.success()

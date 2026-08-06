@@ -1,5 +1,5 @@
 import { NativeFunction, ArgType } from "@tryforge/forgescript"
-import { Context } from "../structures/Context"
+import type { Context } from "../structures/Context"
 
 export default new NativeFunction({
     name: "$regexSplit",
@@ -30,7 +30,7 @@ export default new NativeFunction({
         },
     ],
     output: ArgType.Unknown,
-    execute (ctx: Context, [name, string, sep]) {
+    execute(ctx: Context, [name, string, sep]) {
         const regex = ctx.regexes?.get(name)
         if (!regex) return this.success()
 

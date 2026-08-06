@@ -1,5 +1,5 @@
 import { NativeFunction, ArgType } from "@tryforge/forgescript"
-import { Context } from "../structures/Context"
+import type { Context } from "../structures/Context"
 
 export default new NativeFunction({
     name: "$regexSearch",
@@ -24,7 +24,7 @@ export default new NativeFunction({
         },
     ],
     output: ArgType.Number,
-    execute (ctx: Context, [name, string]) {
+    execute(ctx: Context, [name, string]) {
         const regex = ctx.regexes?.get(name)
         return this.success(regex ? string.search(regex) : undefined)
     }

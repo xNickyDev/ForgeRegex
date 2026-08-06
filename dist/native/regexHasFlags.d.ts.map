@@ -1,0 +1,1 @@
+{"version":3,"file":"regexHasFlags.d.ts","sourceRoot":"","sources":["../../src/native/regexHasFlags.ts"],"names":[],"mappings":"AAAA,OAAO,EAAE,cAAc,EAAE,OAAO,EAAE,MAAM,uBAAuB,CAAA;AAG/D,oBAAY,UAAU;IAClB,CAAC,eAAe;IAChB,CAAC,WAAW;IACZ,CAAC,eAAe;IAChB,CAAC,cAAc;IACf,CAAC,WAAW;IACZ,CAAC,YAAY;IACb,CAAC,WAAW;CACf;;;;;;;;;;;;;;;AAED,wBA4BE"}
