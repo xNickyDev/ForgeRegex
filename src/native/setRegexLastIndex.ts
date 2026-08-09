@@ -1,5 +1,5 @@
 import { NativeFunction, ArgType } from "@tryforge/forgescript"
-import { Context } from "../structures/Context"
+import type { Context } from "../structures/Context"
 
 export default new NativeFunction({
     name: "$setRegexLastIndex",
@@ -23,7 +23,7 @@ export default new NativeFunction({
             rest: false
         },
     ],
-    execute (ctx: Context, [name, index]) {
+    execute(ctx: Context, [name, index]) {
         const regex = ctx.regexes?.get(name)
         if (regex) regex.lastIndex = index
         return this.success()

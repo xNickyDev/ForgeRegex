@@ -16,10 +16,11 @@ var __exportStar = (this && this.__exportStar) || function(m, exports) {
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.ForgeRegex = void 0;
 const forgescript_1 = require("@tryforge/forgescript");
+const package_json_1 = require("../package.json");
 class ForgeRegex extends forgescript_1.ForgeExtension {
     name = "ForgeRegex";
-    description = "A ForgeScript extension that provides support for advanced regex functions.";
-    version = require("../package.json").version;
+    description = package_json_1.description;
+    version = package_json_1.version;
     init() {
         this.load(__dirname + "/native");
     }

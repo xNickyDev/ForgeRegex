@@ -1,5 +1,5 @@
 import { NativeFunction, ArgType } from "@tryforge/forgescript"
-import { Context } from "../structures/Context"
+import type { Context } from "../structures/Context"
 
 export default new NativeFunction({
     name: "$setRegexFlags",
@@ -24,7 +24,7 @@ export default new NativeFunction({
             rest: false
         },
     ],
-    execute (ctx: Context, [name, flags]) {
+    execute(ctx: Context, [name, flags]) {
         const regex = ctx.regexes?.get(name)
         if (regex) ctx.regexes!.set(name, regex, flags)
         return this.success()

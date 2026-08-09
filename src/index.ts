@@ -1,11 +1,12 @@
 import { ForgeExtension } from "@tryforge/forgescript"
+import { description, version } from "../package.json"
 
 export class ForgeRegex extends ForgeExtension {
     name = "ForgeRegex"
-    description = "A ForgeScript extension that provides support for advanced regex functions."
-    version = require("../package.json").version
+    description = description
+    version = version
 
-    public init () {
+    public init() {
         this.load(__dirname + "/native")
     }
 }

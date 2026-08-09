@@ -2,7 +2,7 @@ import { ForgeExtension } from "@tryforge/forgescript";
 export declare class ForgeRegex extends ForgeExtension {
     name: string;
     description: string;
-    version: any;
+    version: string;
     init(): void;
 }
 export * from "./managers";

@@ -1,5 +1,5 @@
 import { NativeFunction, ArgType } from "@tryforge/forgescript"
-import { Context } from "../structures/Context"
+import type { Context } from "../structures/Context"
 
 export default new NativeFunction({
     name: "$regexExecute",
@@ -31,7 +31,7 @@ export default new NativeFunction({
         },
     ],
     output: ArgType.Unknown,
-    execute (ctx: Context, [name, string, sep]) {
+    execute(ctx: Context, [name, string, sep]) {
         const exec = ctx.regexes?.get(name)?.exec(string)
         if (!exec) return this.success()
 

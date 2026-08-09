@@ -14,7 +14,7 @@ async function main() {
     const msg = (await prompt("Please write the commit message: ")).replace(
         /(--?(\w+))/gim, (match) => {
             const name = /(\w+)/.exec(match)![1].toLowerCase()
-        
+
             switch (name) {
                 case "hide": {
                     skip = true
@@ -27,7 +27,7 @@ async function main() {
             }
 
             return ""
-        } 
+        }
     ).trim()
 
     const fileName = join(path, "changelogs.json")

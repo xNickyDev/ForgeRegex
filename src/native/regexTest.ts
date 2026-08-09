@@ -1,5 +1,5 @@
 import { NativeFunction, ArgType } from "@tryforge/forgescript"
-import { Context } from "../structures/Context"
+import type { Context } from "../structures/Context"
 
 export default new NativeFunction({
     name: "$regexTest",
@@ -24,7 +24,7 @@ export default new NativeFunction({
         },
     ],
     output: ArgType.Boolean,
-    execute (ctx: Context, [name, string]) {
+    execute(ctx: Context, [name, string]) {
         return this.success(ctx.regexes?.get(name)?.test(string))
     }
 })

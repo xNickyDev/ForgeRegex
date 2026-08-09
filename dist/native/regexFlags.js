@@ -1,6 +1,7 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 const forgescript_1 = require("@tryforge/forgescript");
+const regexHasFlags_1 = require("./regexHasFlags");
 exports.default = new forgescript_1.NativeFunction({
     name: "$regexFlags",
     version: "1.0.0",
@@ -17,7 +18,7 @@ exports.default = new forgescript_1.NativeFunction({
             rest: false
         },
     ],
-    output: forgescript_1.ArgType.String,
+    output: regexHasFlags_1.RegexFlags,
     execute(ctx, [name]) {
         return this.success(ctx.regexes?.get(name)?.flags);
     }
