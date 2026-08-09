@@ -8,6 +8,7 @@ export enum RegexFlags {
     m = "multiline",
     s = "dotAll",
     u = "unicode",
+    v = "unicodeSets",
     y = "sticky"
 }
 

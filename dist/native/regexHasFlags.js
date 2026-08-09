@@ -10,6 +10,7 @@ var RegexFlags;
     RegexFlags["m"] = "multiline";
     RegexFlags["s"] = "dotAll";
     RegexFlags["u"] = "unicode";
+    RegexFlags["v"] = "unicodeSets";
     RegexFlags["y"] = "sticky";
 })(RegexFlags || (exports.RegexFlags = RegexFlags = {}));
 exports.default = new forgescript_1.NativeFunction({
